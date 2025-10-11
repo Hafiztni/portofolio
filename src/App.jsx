@@ -13,6 +13,7 @@ import Aurora from "./components/Aurora/Aurora";
 import AOS from 'aos';
 import ChatRoom from "./components/ChatRoom";
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import LogoLoop from "./components/LogoLoop/LogoLoop";
 // ..
 AOS.init();
 
@@ -29,6 +30,16 @@ function App() {
   const handleCloseModal = () => {
     setSelectedProject(null);
   };
+  // -------------------------
+
+    const imageLogos = [
+    { src: "./assets/contact/wa.png", alt: "WhatsApp", href: "https://wa.me/123" },
+    { src: "./assets/contact/ig.png", alt: "Instagram", href: "https://instagram.com/" },
+    { src: "./assets/contact/fb.png", alt: "Facebook", href: "https://facebook.com/" },
+    { src: "./assets/contact/be.png", alt: "Behance", href: "https://behance.net/" },
+    { src: "./assets/contact/link.png", alt: "LinkedIn", href: "https://linkedin.com/" },
+  ];
+
   // -------------------------
 
   useEffect(() => {
@@ -119,6 +130,31 @@ function App() {
             />
           </div>
         </div>
+
+{/* LogoLoop */}
+        <div
+          style={{
+            height: "200px",
+            position: "relative",
+            overflow: "hidden",
+            marginTop: "200px",
+            width: "100%",
+          }}
+        >
+          <LogoLoop
+            logos={imageLogos}
+            speed={20}
+            direction="right"
+            logoHeight={55}
+            gap={120}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#222"
+            ariaLabel="Technology partners"
+          />
+        </div>
+
         {/* tentang */}
         <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
@@ -130,9 +166,7 @@ function App() {
                 </h2>
 
                 <BlurText
-                  text="I’m Hafizt Nur Ikhsan, a creative graphic designer focused on crafting modern, distinctive, 
-                  and functional visuals. I enjoy exploring design trends, typography, and branding, blending aesthetics with 
-                  strategy to deliver meaningful works."
+                  text="I’m Hafizt Nur Ikhsan, a creative graphic designer focused on crafting modern, distinctive, and functional visuals. I enjoy exploring design trends, typography, and branding, blending aesthetics with strategy to deliver meaningful works."
                   delay={150}
                   animateBy="words"
                   direction="top"
@@ -205,8 +239,8 @@ function App() {
 
         {/* Proyek */}
         <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
-        <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Project</h1>
-        <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Showcasing a selection of projects that reflect my skills, creativity, and passion for building meaningful digital experiences.</p>
+        <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Certificate</h1>
+        <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Showcasing a collection of certificates that reflect my skills, creativity, and passion in every work</p>
         <div className="proyek-box mt-14" >
 
           <div style={{ height: 'auto', position: 'relative' }} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true" >
@@ -244,69 +278,10 @@ function App() {
           </p>
 
           {/* Container dua kolom */}
-          <div className="flex flex-col md:flex-row gap-8">
-            {/* Chat Room di kiri */}
-            <div className="flex-1 bg-zinc-800 p-6 rounded-md" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
-              <ChatRoom />
-            </div>
-
+ 
             {/* Contact Form di kanan */}
-            <div className="flex-1">
-              <form
-                action="https://formsubmit.co/rissoppa21@gmail.com"
-                method="POST"
-                className="bg-zinc-800 p-10 w-full rounded-md"
-                autoComplete="off"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="500"
-                data-aos-once="true"
-              >
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label className="font-semibold">Full Name</label>
-                    <input
-                      type="text"
-                      name="Name"
-                      placeholder="Input Name..."
-                      className="border border-zinc-500 p-2 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="font-semibold">Email</label>
-                    <input
-                      type="email"
-                      name="Email"
-                      placeholder="Input Email..."
-                      className="border border-zinc-500 p-2 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="font-semibold">Message</label>
-                    <textarea
-                      name="message"
-                      id="message"
-                      cols="45"
-                      rows="7"
-                      placeholder="Message..."
-                      className="border border-zinc-500 p-2 rounded-md"
-                      required
-                    ></textarea>
-                  </div>
-                  <div className="text-center">
-                    <button
-                      type="submit"
-                      className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full w-full cursor-pointer border border-gray-700 hover:bg-[#222] transition-colors"
-                    >
-                      <ShinyText text="Send" disabled={false} speed={3} className="custom-class" />
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
+            
+
         </div>
         {/* Kontak */}
       </main>
