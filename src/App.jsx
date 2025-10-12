@@ -23,6 +23,7 @@ import TrueFocus from './components/TrueFocus/TrueFocus.jsx';
 AOS.init();
 
 function App() {
+  
   const aboutRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -47,16 +48,7 @@ function App() {
 
   // -------------------------
 
-  useEffect(() => {
-    const isReload =
-      performance.getEntriesByType("navigation")[0]?.type === "reload";
 
-    if (isReload) {
-      // Ambil path tanpa hash
-      const baseUrl = window.location.origin + "/portofolio/";
-      window.location.replace(baseUrl);
-    }
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -89,7 +81,7 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
-          <div className="animate__animated animate__fadeInUp animate__delay-3s">
+          <div className="animate__animated animate__fadeInUp animate__delay-1s">
 <div className="flex items-center gap-1 mb-3 bg-zinc-800 w-fit p-1 rounded-lg text-">
   <TrueFocus
     sentence="Graphic Design"
@@ -127,7 +119,7 @@ function App() {
             </div>
 
           </div>
-          <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
+          <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-2s">
             <ProfileCard
               name="Hafizt Nur Ikhsan"
               title="Graphic Designer"

@@ -1,63 +1,67 @@
-import Aurora from "./Aurora/Aurora"
 import { useState, useEffect } from "react"
-import CountUp from "./CountUp/CountUp"
+import "./PreLoader.scss"; // file SCSS yang berisi semua kode CSS/SCSS Saturn + Titan
 
-const PreLoader = () => {
-  const [loading, setLoading] = useState(true)
-  const [countDone, setCountDone] = useState(false)
-  const [fadeText, setFadeText] = useState(false)
-  const [fadeScreen, setFadeScreen] = useState(false)
+const PreLoader = ({ onFinish }) => {
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (countDone) {
-      // Fade teks
-      const fadeTextTimer = setTimeout(() => setFadeText(true), 3000)
+    // Tunggu 7 detik sebelum hilang
+    const timer = setTimeout(() => {
+      setLoading(false);
+      onFinish?.(); // kirim sinyal ke main.jsx kalau PreLoader selesai
+    }, 7000);
 
-      // Fade seluruh screen
-      const fadeScreenTimer = setTimeout(() => setFadeScreen(true), 2000)
+    return () => clearTimeout(timer);
+  }, []);
 
-      // Unmount preloader setelah animasi fade selesai
-      const hideTimer = setTimeout(() => setLoading(false), 3000)
-
-      return () => {
-        clearTimeout(fadeTextTimer)
-        clearTimeout(fadeScreenTimer)
-        clearTimeout(hideTimer)
-      }
-    }
-  }, [countDone])
+  if (!loading) return null;
 
   return (
-    loading && (
-      <div
-        className={`w-screen h-screen fixed flex items-center justify-center bg-black z-[10000] overflow-hidden transition-opacity duration-1000 ${
-          fadeScreen ? "opacity-0" : "opacity-100"
-        }`}
-      >
-        <Aurora
-          colorStops={["#577870", "#1F97A6", "#127B99"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-        <div
-          className={`absolute text-white text-6xl font-bold transition-all duration-1000 ${
-            fadeText ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
-          }`}
-        >
-          <CountUp
-            from={0}
-            to={100}
-            separator=","
-            direction="up"
-            duration={1}
-            className="count-up-text"
-            onEnd={() => setCountDone(true)}
-          />
+    <div className="preloader">
+      {/* Masukkan HTML Saturn/Titan sesuai strukturmu */}
+      <div className="scene">
+        <div className="scene_titanShadow"></div>
+        <div className="t_wrap">
+          <div className="scene_titan">
+            <div className="eyes">
+              <div className="eye eye--left"></div>
+              <div className="eye eye--right"></div>
+            </div>
+          </div>
+        </div>
+        <div className="scene_saturn">
+          <div className="scene_saturn__face">
+            <div className="face_clip">
+              <div className="eye eye--left"></div>
+              <div className="eye eye--right"></div>
+              <div className="mouth"></div>
+            </div>
+          </div>
+          <div className="scene_saturn__shadow"></div>
+          <div className="scene_saturn__shadowRing"></div>
+          <div className="scene_saturn__sparks">
+            {[...Array(20)].map((_, i) => (
+              <div key={i} className="spark"></div>
+            ))}
+          </div>
+          <div className="scene_saturn__ring">
+            <div className="small">
+              {[...Array(40)].map((_, i) => (
+                <div key={i} className="small_part"></div>
+              ))}
+            </div>
+            {[...Array(3)].map((_, layer) => (
+              <div key={layer} className="layer">
+                {[...Array(50)].map((_, i) => (
+                  <div key={i} className="layer_part"></div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    )
-  )
-}
+    </div>
+  );
+};
 
-export default PreLoader
+export default PreLoader;
