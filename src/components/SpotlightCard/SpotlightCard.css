@@ -27,3 +27,22 @@
 .card-spotlight:focus-within::before {
   opacity: 0.6;
 }
+
+/* 📱 Saat layar vertikal di HP */
+@media (max-width: 768px) and (orientation: portrait) {
+  .card-spotlight {
+    width: 220px !important;
+    height: 300px !important;
+    padding: 1.2rem;
+    border-radius: 1rem;
+  }
+
+  .card-spotlight h2 {
+    font-size: 1rem;
+  }
+
+  .card-spotlight p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}

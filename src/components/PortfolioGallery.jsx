@@ -6,10 +6,27 @@ export default function PortfolioGallery({ className = "" }) {
   const [selectedShowcase, setSelectedShowcase] = useState(showcases[0]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false); // 👈 tambahan
 
   const images = selectedShowcase.images;
 
-  // open lightbox at specific index
+  // ✅ Deteksi apakah layar sedang mobile (misal di HP vertikal)
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // ukuran gambar menyesuaikan orientasi
+  const imageWidth = isMobile
+    ? selectedShowcase.width * 0.5 // kecilkan 30%
+    : selectedShowcase.width;
+  const imageHeight = isMobile
+    ? selectedShowcase.height * 0.5
+    : selectedShowcase.height;
+
+  // lightbox handler
   const openLightbox = (index) => {
     setCurrentIndex(index);
     setLightboxOpen(true);
@@ -32,7 +49,6 @@ export default function PortfolioGallery({ className = "" }) {
   };
 
   useEffect(() => {
-    // reset index when category change
     setCurrentIndex(0);
   }, [selectedShowcase]);
 
@@ -49,7 +65,7 @@ export default function PortfolioGallery({ className = "" }) {
 
   return (
     <section className={`portfolio-gallery ${className}`}>
-      {/* header + category buttons */}
+      {/* header */}
       <div className="mb-6 text-center">
         <h2 className="text-3xl font-bold mb-2">Portfolio</h2>
         <p className="text-sm text-gray-400 mb-4">Click image to open preview</p>
@@ -72,27 +88,30 @@ export default function PortfolioGallery({ className = "" }) {
       </div>
 
       {/* grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
         {images.map((img, idx) => (
           <div
             key={idx}
             className="relative overflow-hidden rounded-xl cursor-pointer group"
-            style={{ height: selectedShowcase.height }}
+            style={{
+              height: imageHeight,
+              width: "100%",
+            }}
             onClick={() => openLightbox(idx)}
           >
             <img
               src={img.src}
               alt={img.alt}
               className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
-              width={selectedShowcase.width}
-              height={selectedShowcase.height}
+              width={imageWidth}
+              height={imageHeight}
             />
             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
           </div>
         ))}
       </div>
 
-      {/* Lightbox */}
+      {/* lightbox */}
       {lightboxOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
@@ -142,7 +161,6 @@ export default function PortfolioGallery({ className = "" }) {
             />
           </div>
 
-          {/* caption / index */}
           <div className="absolute bottom-6 text-center text-sm text-gray-200">
             {selectedShowcase.title} — {currentIndex + 1} / {images.length}
           </div>

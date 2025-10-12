@@ -306,17 +306,16 @@ function App() {
       "
     >
       {[1, 2, 3].map((i) => (
-        <SpotlightCard
-          key={i}
-          className="
-            custom-spotlight-card snap-center flex-shrink-0
-            w-[300px] h-[400px] relative overflow-hidden
-            md:w-[300px] md:h-[400px]
-            w-[260px] h-[340px] sm:w-[280px] sm:h-[360px]
-          "
-          spotlightColor="rgba(0, 229, 255, 0.2)"
-          data-aos="fade-up"
-        >
+<SpotlightCard
+  key={i}
+  className="
+    custom-spotlight-card snap-center flex-shrink-0
+    w-[300px] h-[400px] relative overflow-hidden
+  "
+  spotlightColor="rgba(0, 229, 255, 0.2)"
+  data-aos="fade-up"
+>
+
           <img
             src="./assets/star.png"
             alt={`Spotlight ${i}`}
