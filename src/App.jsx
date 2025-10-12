@@ -16,6 +16,8 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 import LogoLoop from "./components/LogoLoop/LogoLoop";
 import PortfolioGallery from "./components/PortfolioGallery";
 import SpotlightCard from './components/SpotlightCard/SpotlightCard.jsx';
+import TrueFocus from './components/TrueFocus/TrueFocus.jsx';
+
 
 // ..
 AOS.init();
@@ -88,10 +90,17 @@ function App() {
 
         <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
-            <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
-              <img src="./assets/faris1.png" className="w-10 rounded-md" />
-              <q>Avoid or just undertake it</q>
-            </div>
+<div className="flex items-center gap-1 mb-3 bg-zinc-800 w-fit p-1 rounded-lg text-">
+  <TrueFocus
+    sentence="Graphic Design"
+    manualMode={false}
+    blurAmount={5}
+    borderColor="red"
+    animationDuration={2}
+    pauseBetweenAnimations={1}
+  />
+</div>
+
             <h1 className="text-5xl font-bold mb-6">
               <ShinyText text="Hi I'm Hafizt" disabled={false} speed={3} className='custom-class' />
             </h1>
@@ -278,6 +287,7 @@ function App() {
   <PortfolioGallery />
 </div>
 
+
 {/* Experience Section */}
 <div
   className="min-h-screen text-white flex flex-col items-center px-6"
@@ -336,6 +346,7 @@ function App() {
     </div>
   </div>
 </div>
+{/* Experience Section */}
 
 
         {/* Kontak */}
