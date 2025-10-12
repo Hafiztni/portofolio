@@ -1,62 +1,46 @@
-import { useState, useEffect } from "react"
-import "./PreLoader.scss"; // file SCSS yang berisi semua kode CSS/SCSS Saturn + Titan
+import { useState, useEffect, useRef } from "react";
+import "./PreLoader.css";
 
 const PreLoader = ({ onFinish }) => {
-  const [loading, setLoading] = useState(true);
+  const [show, setShow] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+  const loaderRef = useRef(null);
 
   useEffect(() => {
-    // Tunggu 7 detik sebelum hilang
-    const timer = setTimeout(() => {
-      setLoading(false);
-      onFinish?.(); // kirim sinyal ke main.jsx kalau PreLoader selesai
-    }, 7000);
+    const loader = loaderRef.current;
+    let loopCount = 0;
 
-    return () => clearTimeout(timer);
-  }, []);
+    const handleIteration = () => {
+      loopCount++;
+      if (loopCount === 2) {
+        // setelah animasi kata berjalan 2x
+        setFadeOut(true);
+        setTimeout(() => {
+          setShow(false);
+          onFinish?.();
+        }, 600); // tunggu 0.6 detik fade-out
+      }
+    };
 
-  if (!loading) return null;
+    loader?.addEventListener("animationiteration", handleIteration);
+    return () => loader?.removeEventListener("animationiteration", handleIteration);
+  }, [onFinish]);
+
+  // kalau sudah selesai loading → hapus komponen dari DOM
+  if (!show) return null;
 
   return (
-    <div className="preloader">
-      {/* Masukkan HTML Saturn/Titan sesuai strukturmu */}
-      <div className="scene">
-        <div className="scene_titanShadow"></div>
-        <div className="t_wrap">
-          <div className="scene_titan">
-            <div className="eyes">
-              <div className="eye eye--left"></div>
-              <div className="eye eye--right"></div>
-            </div>
-          </div>
-        </div>
-        <div className="scene_saturn">
-          <div className="scene_saturn__face">
-            <div className="face_clip">
-              <div className="eye eye--left"></div>
-              <div className="eye eye--right"></div>
-              <div className="mouth"></div>
-            </div>
-          </div>
-          <div className="scene_saturn__shadow"></div>
-          <div className="scene_saturn__shadowRing"></div>
-          <div className="scene_saturn__sparks">
-            {[...Array(20)].map((_, i) => (
-              <div key={i} className="spark"></div>
-            ))}
-          </div>
-          <div className="scene_saturn__ring">
-            <div className="small">
-              {[...Array(40)].map((_, i) => (
-                <div key={i} className="small_part"></div>
-              ))}
-            </div>
-            {[...Array(3)].map((_, layer) => (
-              <div key={layer} className="layer">
-                {[...Array(50)].map((_, i) => (
-                  <div key={i} className="layer_part"></div>
-                ))}
-              </div>
-            ))}
+    <div className={`preloader-container ${fadeOut ? "fade-out" : ""}`}>
+      <div className="card">
+        <div className="loader">
+          <p>loading</p>
+          <div className="words" ref={loaderRef}>
+            <span className="word">website</span>
+            <span className="word">portfolio</span>
+            <span className="word">graphic</span>
+            <span className="word">design</span>
+            <span className="word">website</span>
+            <span className="word">portfolio</span>
           </div>
         </div>
       </div>

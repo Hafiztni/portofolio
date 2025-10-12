@@ -17,6 +17,8 @@ import LogoLoop from "./components/LogoLoop/LogoLoop";
 import PortfolioGallery from "./components/PortfolioGallery";
 import SpotlightCard from './components/SpotlightCard/SpotlightCard.jsx';
 import TrueFocus from './components/TrueFocus/TrueFocus.jsx';
+import CountUp from './components/CountUp/CountUp.jsx'
+
 
 
 // ..
@@ -338,6 +340,8 @@ function App() {
   </div>
 </div>
 {/* Experience Section */}
+
+
 
 
         {/* Kontak */}
