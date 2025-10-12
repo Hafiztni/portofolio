@@ -15,6 +15,7 @@ import ChatRoom from "./components/ChatRoom";
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import LogoLoop from "./components/LogoLoop/LogoLoop";
 import PortfolioGallery from "./components/PortfolioGallery";
+import SpotlightCard from './components/SpotlightCard/SpotlightCard.jsx';
 
 // ..
 AOS.init();
@@ -276,6 +277,66 @@ function App() {
 <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="mt-24">
   <PortfolioGallery />
 </div>
+
+{/* Experience Section */}
+<div
+  className="min-h-screen text-white flex flex-col items-center px-6"
+  data-aos="fade-up"
+>
+  <h1 className="text-4xl font-bold text-center mb-15 mt-35">
+    My Highlights
+  </h1>
+
+  <div className="w-full flex justify-center">
+    <div
+      className="
+        flex gap-6 overflow-x-auto pb-10 w-full max-w-7xl snap-x snap-mandatory scrollbar-hide justify-center
+        md:flex-row
+        flex-col items-center md:items-stretch md:overflow-x-auto
+      "
+    >
+      {[1, 2, 3].map((i) => (
+        <SpotlightCard
+          key={i}
+          className="
+            custom-spotlight-card snap-center flex-shrink-0
+            w-[300px] h-[400px] relative overflow-hidden
+            md:w-[300px] md:h-[400px]
+            w-[260px] h-[340px] sm:w-[280px] sm:h-[360px]
+          "
+          spotlightColor="rgba(0, 229, 255, 0.2)"
+          data-aos="fade-up"
+        >
+          <img
+            src="./assets/star.png"
+            alt={`Spotlight ${i}`}
+            className="absolute top-6 left-6 w-16 h-16 object-contain animate-[glow_2s_ease-in-out_infinite]"
+            style={{
+              filter: `drop-shadow(0 0 10px ${
+                ["#00FFFF", "#00FFAA", "#00E5FF"][i - 1]
+              })`,
+              animationDelay: `${i * 0.3}s`,
+            }}
+          />
+
+          <div className="flex flex-col items-center justify-center h-full text-center px-6">
+            <h2 className="text-xl font-semibold mb-2">
+              {`Spotlight ${i}`}
+            </h2>
+            <p className="text-gray-400 text-sm">
+              {[
+                "Creative Design Projects showcasing visual identity and branding work.",
+                "Frontend Development focusing on modern UI with React & Tailwind.",
+                "Collaborative Works that highlight teamwork and creative direction.",
+              ][i - 1]}
+            </p>
+          </div>
+        </SpotlightCard>
+      ))}
+    </div>
+  </div>
+</div>
+
 
         {/* Kontak */}
         <div className="kontak mt-32 sm:p-10 p-0" id="contact">
