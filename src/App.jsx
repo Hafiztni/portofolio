@@ -6,7 +6,7 @@ import ScrambledText from "./components/ScrambledText/ScrambledText";
 import SplitText from "./components/SplitText/SplitText";
 import Lanyard from "./components/Lanyard/Lanyard";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
-import { listTools, listProyek } from "./data";
+import { listTools, listProyek, showcases, } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal"; // <-- IMPORT MODAL
 import Aurora from "./components/Aurora/Aurora";
@@ -14,6 +14,8 @@ import AOS from 'aos';
 import ChatRoom from "./components/ChatRoom";
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import LogoLoop from "./components/LogoLoop/LogoLoop";
+import PortfolioGallery from "./components/PortfolioGallery";
+
 // ..
 AOS.init();
 
@@ -75,7 +77,7 @@ function App() {
     <>
       <div className="absolute top-0 left-0 w-full h-full -z-10 ">
         <Aurora
-          colorStops={["#577870", "#1F97A6", "#127B99"]}
+          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
           blend={0.5}
           amplitude={1.0}
           speed={0.5}
@@ -146,7 +148,7 @@ function App() {
             speed={20}
             direction="right"
             logoHeight={55}
-            gap={120}
+            gap={90}
             pauseOnHover
             scaleOnHover
             fadeOut
@@ -189,12 +191,7 @@ function App() {
                 </div>
 
 
-                <ShinyText
-                  text="Working with heart, creating with mind."
-                  disabled={false}
-                  speed={3}
-                  className="text-sm md:text-base text-violet-400"
-                />
+
               </div>
             </div>
 
@@ -206,35 +203,55 @@ function App() {
 
         </div>
         <div className="tools mt-32">
-          <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
-          <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
-          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+  <h1
+    className="text-4xl/snug font-bold mb-4"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-once="true"
+  >
+    Tools & Technologies
+  </h1>
+  <p
+    className="w-full sm:w-2/5 text-base/loose opacity-50"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-delay="300"
+    data-aos-once="true"
+  >
+    My Professional Skills
+  </p>
 
-            {listTools.map((tool) => (
-              <div
-                key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true"
-                className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
-              >
-                <img
-                  src={tool.gambar}
-                  alt="Tools Image"
-                  className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg group-hover:bg-zinc-900 transition-all duration-300"
-                />
-                <div className="flex flex-col overflow-hidden">
-                  <div className="truncate">
-                    <ShinyText
-                      text={tool.nama}
-                      disabled={false}
-                      speed={3}
-                      className="text-lg font-semibold block"
-                    />
-                  </div>
-                  <p className="text-sm text-zinc-400 truncate">{tool.ket}</p>
-                </div>
-              </div>
-            ))}
+  <div className="tools-box mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+    {listTools.map((tool) => (
+      <div
+        key={tool.id}
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay={tool.dad}
+        data-aos-once="true"
+        className="flex items-center gap-3 p-3 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
+      >
+        <img
+          src={tool.gambar}
+          alt="Tools Image"
+          className="w-12 h-12 sm:w-14 sm:h-14 object-contain bg-zinc-800 p-2 rounded-lg group-hover:bg-zinc-900 transition-all duration-300"
+        />
+        <div className="flex flex-col overflow-hidden">
+          <div className="truncate">
+            <ShinyText
+              text={tool.nama}
+              disabled={false}
+              speed={3}
+              className="text-sm sm:text-base font-semibold block"
+            />
           </div>
+          <p className="text-xs sm:text-sm text-zinc-400 truncate">{tool.ket}</p>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
         {/* tentang */}
 
         {/* Proyek */}
@@ -256,6 +273,9 @@ function App() {
         </div>
         {/* Proyek */}
 
+<div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="mt-24">
+  <PortfolioGallery />
+</div>
 
         {/* Kontak */}
         <div className="kontak mt-32 sm:p-10 p-0" id="contact">
