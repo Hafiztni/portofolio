@@ -6,7 +6,7 @@ import ScrambledText from "./components/ScrambledText/ScrambledText";
 import SplitText from "./components/SplitText/SplitText";
 import Lanyard from "./components/Lanyard/Lanyard";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
-import { listTools, listProyek, showcases, } from "./data";
+import { listTools, listProyek, showcases,spotlightData } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal"; // <-- IMPORT MODAL
 import Aurora from "./components/Aurora/Aurora";
@@ -18,6 +18,10 @@ import PortfolioGallery from "./components/PortfolioGallery";
 import SpotlightCard from './components/SpotlightCard/SpotlightCard.jsx';
 import TrueFocus from './components/TrueFocus/TrueFocus.jsx';
 import CountUp from './components/CountUp/CountUp.jsx'
+import Contact from "./components/Contact/Contact.jsx";
+import WhyChooseMe from "./components/WhyChooseMe/WhyChooseMe.jsx";
+
+
 
 
 
@@ -47,6 +51,27 @@ function App() {
     { src: "./assets/contact/be.png", alt: "Behance", href: "https://behance.net/" },
     { src: "./assets/contact/link.png", alt: "LinkedIn", href: "https://linkedin.com/" },
   ];
+
+  // -------------------------
+
+  const [logoHeight, setLogoHeight] = useState(55);
+const [logoGap, setLogoGap] = useState(90);
+
+useEffect(() => {
+  const updateSize = () => {
+    if (window.innerWidth <= 768) { // vertikal HP
+      setLogoHeight(40); // lebih kecil
+      setLogoGap(30);    // jarak lebih dekat
+    } else {
+      setLogoHeight(55); // default
+      setLogoGap(90);
+    }
+  };
+
+  updateSize();
+  window.addEventListener("resize", updateSize);
+  return () => window.removeEventListener("resize", updateSize);
+}, []);
 
   // -------------------------
 
@@ -82,7 +107,8 @@ function App() {
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
+        <div className="hero grid md:grid-cols-2 items-center pt-24 sm:pt-28 md:pt-32 xl:gap-0 gap-6 grid-cols-1">
+
           <div className="animate__animated animate__fadeInUp animate__delay-1s">
 <div className="flex items-center gap-1 mb-3 bg-zinc-800 w-fit p-1 rounded-lg text-">
   <TrueFocus
@@ -161,51 +187,58 @@ function App() {
           />
         </div>
 
-        {/* tentang */}
-        <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-            <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
-              {/* Kolom kiri */}
-              <div className="flex-1 text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
-                  About Me
-                </h2>
+        {/* About Section */}
+<div
+  className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6"
+  id="about"
+>
+  <div
+    className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-8"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-once="true"
+  >
+    {/* Kolom kiri */}
+    <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
+      <div className="flex-1 text-left">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+          About Me
+        </h2>
 
-                <BlurText
-                  text="I’m Hafizt Nur Ikhsan, a creative graphic designer focused on crafting modern, distinctive, and functional visuals. I enjoy exploring design trends, typography, and branding, blending aesthetics with strategy to deliver meaningful works."
-                  delay={150}
-                  animateBy="words"
-                  direction="top"
-                  className="text-base md:text-lg leading-relaxed mb-10 text-gray-300"
-                />
+        <BlurText
+          text="I’m Hafizt Nur Ikhsan, a creative graphic designer focused on crafting modern, distinctive, and functional visuals. I enjoy exploring design trends, typography, and branding, blending aesthetics with strategy to deliver meaningful works."
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-base md:text-lg leading-relaxed mb-10 text-gray-300"
+        />
 
-                <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
-                  <div>
-                    <h1 className="text-3xl md:text-4xl mb-1">
-                      40<span className="text-violet-500">+</span>
-                    </h1>
-                    <p>Project Finished</p>
-                  </div>
-                  <div>
-                    <h1 className="text-3xl md:text-4xl mb-1">
-                      2<span className="text-violet-500">+</span>
-                    </h1>
-                    <p>Years of Experience</p>
-                  </div>
-                </div>
-
-
-
-              </div>
-            </div>
-
-            {/* Kolom kanan */}
-            <div className="basis-full md:basis-5/12 pl-0 md:pl-8 overflow-hidden max-w-full flex justify-center ">
-              <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
-            </div>
+        <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
+          <div>
+            <h1 className="text-3xl md:text-4xl mb-1">
+              40<span className="text-violet-500">+</span>
+            </h1>
+            <p>Project Finished</p>
           </div>
-
+          <div>
+            <h1 className="text-3xl md:text-4xl mb-1">
+              2<span className="text-violet-500">+</span>
+            </h1>
+            <p>Years of Experience</p>
+          </div>
         </div>
+      </div>
+    </div>
+
+    {/* Kolom kanan: Lanyard (tidak ikut fade AOS) */}
+    <div className="basis-full md:basis-5/12 pl-0 md:pl-8 overflow-hidden max-w-full flex justify-center">
+      <div data-aos="none" className="w-full h-full flex justify-center items-center">
+        <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
+      </div>
+    </div>
+  </div>
+</div>
+
         <div className="tools mt-32">
   <h1
     className="text-4xl/snug font-bold mb-4"
@@ -286,62 +319,77 @@ function App() {
 <div
   className="min-h-screen text-white flex flex-col items-center px-6"
   data-aos="fade-up"
+  data-aos-duration="1000"
+  data-aos-once="true"
 >
-  <h1 className="text-4xl font-bold text-center mb-15 mt-35">
-    My Highlights
+  <h1 className="text-4xl font-bold text-center mb-15 mt-35"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="100"
+      data-aos-once="true"
+  >
+    Experience
   </h1>
 
   <div className="w-full flex justify-center">
     <div
       className="
-        flex gap-6 overflow-x-auto pb-10 w-full max-w-7xl snap-x snap-mandatory scrollbar-hide justify-center
-        md:flex-row
-        flex-col items-center md:items-stretch md:overflow-x-auto
+        flex gap-8 overflow-x-auto pb-10 w-full max-w-7xl snap-x snap-mandatory scrollbar-hide justify-center
+        md:flex-row flex-col items-center md:items-stretch md:overflow-x-auto
       "
     >
-      {[1, 2, 3].map((i) => (
-<SpotlightCard
-  key={i}
-  className="
-    custom-spotlight-card snap-center flex-shrink-0
-    w-[300px] h-[400px] relative overflow-hidden
-  "
-  spotlightColor="rgba(0, 229, 255, 0.2)"
-  data-aos="fade-up"
->
+      {spotlightData.map((item, index) => (
+  <SpotlightCard
+    key={item.id}
+    className="custom-spotlight-card snap-center flex-shrink-0 w-[300px] h-[400px] relative overflow-hidden"
+    spotlightColor={item.color}
+    data-aos="fade-up"
+    data-aos-delay={index * 200} // delay card
+    data-aos-duration="800"
+    data-aos-once="true"
+  >
+    <img
+      src={item.img}
+      alt={`Spotlight ${index + 1}`}
+      className="absolute top-6 left-6 w-16 h-16 object-contain animate-[glow_2s_ease-in-out_infinite]"
+      style={{
+        filter: `drop-shadow(0 0 10px ${item.color.replace("0.2", "1")})`,
+        animationDelay: `${index * 0.3}s`,
+      }}
+    />
+    <div className="flex flex-col items-center justify-center h-full text-center px-6">
+      <h2
+        className="text-xl font-semibold mb-2"
+        data-aos="fade-up"
+        data-aos-delay={index * 250 + 100} // delay judul sedikit setelah card
+        data-aos-duration="700"
+        data-aos-once="true"
+      >
+        {item.title}
+      </h2>
+      <p
+        className="text-gray-400 text-sm"
+        data-aos="fade-up"
+        data-aos-delay={index * 250 + 200} // delay deskripsi setelah judul
+        data-aos-duration="700"
+        data-aos-once="true"
+      >
+        {item.desc}
+      </p>
+    </div>
+  </SpotlightCard>
+))}
 
-          <img
-            src="./assets/star.png"
-            alt={`Spotlight ${i}`}
-            className="absolute top-6 left-6 w-16 h-16 object-contain animate-[glow_2s_ease-in-out_infinite]"
-            style={{
-              filter: `drop-shadow(0 0 10px ${
-                ["#00FFFF", "#00FFAA", "#00E5FF"][i - 1]
-              })`,
-              animationDelay: `${i * 0.3}s`,
-            }}
-          />
-
-          <div className="flex flex-col items-center justify-center h-full text-center px-6">
-            <h2 className="text-xl font-semibold mb-2">
-              {`Spotlight ${i}`}
-            </h2>
-            <p className="text-gray-400 text-sm">
-              {[
-                "Creative Design Projects showcasing visual identity and branding work.",
-                "Frontend Development focusing on modern UI with React & Tailwind.",
-                "Collaborative Works that highlight teamwork and creative direction.",
-              ][i - 1]}
-            </p>
-          </div>
-        </SpotlightCard>
-      ))}
     </div>
   </div>
 </div>
 {/* Experience Section */}
 
 
+{/* Why Choose Me Section */}
+<div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+  <WhyChooseMe />
+</div>
 
 
         {/* Kontak */}
@@ -370,7 +418,12 @@ function App() {
             
 
         </div>
-        {/* Kontak */}
+{/* Kontak */}
+    <>
+      <Contact />
+    </>
+{/* Kontak */}
+
       </main>
 
       <ProjectModal

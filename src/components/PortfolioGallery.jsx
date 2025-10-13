@@ -1,16 +1,24 @@
 // src/components/PortfolioGallery.jsx
 import React, { useEffect, useState } from "react";
 import { showcases } from "../data.js";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function PortfolioGallery({ className = "" }) {
   const [selectedShowcase, setSelectedShowcase] = useState(showcases[0]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false); // 👈 tambahan
+  const [isMobile, setIsMobile] = useState(false);
 
   const images = selectedShowcase.images;
 
-  // ✅ Deteksi apakah layar sedang mobile (misal di HP vertikal)
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({ once: true });
+    AOS.refresh();
+  }, []);
+
+  // ✅ Deteksi mode mobile
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
@@ -18,15 +26,11 @@ export default function PortfolioGallery({ className = "" }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // ukuran gambar menyesuaikan orientasi
-  const imageWidth = isMobile
-    ? selectedShowcase.width * 0.5 // kecilkan 30%
-    : selectedShowcase.width;
-  const imageHeight = isMobile
-    ? selectedShowcase.height * 0.5
-    : selectedShowcase.height;
+  // ✅ Ukuran gambar grid (bukan modal)
+  const imageWidth = isMobile ? selectedShowcase.width * 0.5 : selectedShowcase.width;
+  const imageHeight = isMobile ? selectedShowcase.height * 0.5 : selectedShowcase.height;
 
-  // lightbox handler
+  // ✅ Lightbox handler
   const openLightbox = (index) => {
     setCurrentIndex(index);
     setLightboxOpen(true);
@@ -48,9 +52,7 @@ export default function PortfolioGallery({ className = "" }) {
     setCurrentIndex((i) => (i + 1) % images.length);
   };
 
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, [selectedShowcase]);
+  useEffect(() => setCurrentIndex(0), [selectedShowcase]);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -65,7 +67,7 @@ export default function PortfolioGallery({ className = "" }) {
 
   return (
     <section className={`portfolio-gallery ${className}`}>
-      {/* header */}
+      {/* Header */}
       <div className="mb-6 text-center">
         <h2 className="text-3xl font-bold mb-2">Portfolio</h2>
         <p className="text-sm text-gray-400 mb-4">Click image to open preview</p>
@@ -87,17 +89,20 @@ export default function PortfolioGallery({ className = "" }) {
         </div>
       </div>
 
-      {/* grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+      {/* Grid */}
+      <div
+        key={selectedShowcase.id}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 transition-opacity duration-300 opacity-100"
+      >
         {images.map((img, idx) => (
           <div
             key={idx}
             className="relative overflow-hidden rounded-xl cursor-pointer group"
-            style={{
-              height: imageHeight,
-              width: "100%",
-            }}
+            style={{ height: imageHeight, width: "100%" }}
             onClick={() => openLightbox(idx)}
+            data-aos="fade-up"
+            data-aos-delay={idx * 150} // ⬅ delay per item
+            data-aos-duration="800"
           >
             <img
               src={img.src}
@@ -111,12 +116,13 @@ export default function PortfolioGallery({ className = "" }) {
         ))}
       </div>
 
-      {/* lightbox */}
+      {/* Lightbox */}
       {lightboxOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
           onClick={closeLightbox}
+          className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/50 transition-all duration-300 animate-fadeIn"
         >
+          {/* Tombol Close */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -128,6 +134,7 @@ export default function PortfolioGallery({ className = "" }) {
             ✕
           </button>
 
+          {/* Tombol Sebelumnya */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -139,6 +146,7 @@ export default function PortfolioGallery({ className = "" }) {
             ‹
           </button>
 
+          {/* Tombol Selanjutnya */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -150,17 +158,21 @@ export default function PortfolioGallery({ className = "" }) {
             ›
           </button>
 
+          {/* 🖼️ Gambar utama */}
           <div
-            className="flex items-center justify-center max-w-[95%] max-h-[95%]"
+            className="flex items-center justify-center w-full h-full p-4"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
-              className="max-w-full max-h-full rounded-lg shadow-lg"
+              className="rounded-2xl shadow-2xl object-contain transition-transform duration-500 
+              scale-100 hover:scale-105 
+              max-h-[75vh] max-w-[85vw] sm:max-h-[80vh] sm:max-w-[70vw]"
             />
           </div>
 
+          {/* Info bawah */}
           <div className="absolute bottom-6 text-center text-sm text-gray-200">
             {selectedShowcase.title} — {currentIndex + 1} / {images.length}
           </div>

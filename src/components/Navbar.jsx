@@ -14,13 +14,20 @@ const Navbar = ({ hidden = false }) => {
   }, []);
 
   return (
-    <nav className="navbar relative z-50 py-7 flex items-center justify-between px-6 md:px-12">
+<nav
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-500
+  ${active ? "backdrop-blur-md bg-black/40 shadow-lg" : "bg-transparent backdrop-blur-0"}
+  py-2 flex items-center justify-between px-6 md:px-12`}
+>
+
+
       {/* Logo */}
-      <div className="logo">
-        <h1 className="text-3xl font-bold text-white p-1 md:bg-transparent md:text-white">
-          Portofolio
-        </h1>
-      </div>
+<div className="logo hidden md:block">
+  <h1 className="text-3xl font-bold text-white">
+    Portofolio
+  </h1>
+</div>
+
 
       {/* Menu */}
       <ul

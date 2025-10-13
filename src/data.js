@@ -101,9 +101,9 @@ export const listProyek = [
   {
     id: 1,
     image: Proyek1,
-    title: "AIS Detection App",
-    subtitle: "A mobile application powered by Artificial Intelligence...",
-    fullDescription:"A mobile application powered by Artificial Intelligence and Machine Learning, developed to assist in the early detection of Adolescent Idiopathic Scoliosis (AIS). By analyzing patient data and patterns, the app provides predictions that can help doctors and patients take preventive measures. This project demonstrates the role of AI in modern healthcare by improving accuracy, accessibility, and efficiency in medical diagnosis.",
+    title: "Certificate of Basic AI Learning",
+    subtitle: "Completed through Dicoding Indonesia Platform",
+    fullDescription:"This certificate signifies a foundational understanding of AI concepts and applications, including machine learning, data processing, and AI algorithms.",
     borderColor: "#3B82F6",
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
     url: "https://github.com/rissss21",
@@ -112,9 +112,9 @@ export const listProyek = [
   {
     id: 2,
     image: Proyek2,
-    title: "IoT Air Quality Monitoring",
-    subtitle: "A smart IoT system designed to measure and analyze air quality...",
-    fullDescription:"A smart IoT system designed to measure and analyze air quality using sensors connected to a mobile application. The app provides real-time updates on air quality levels, empowering users to make healthier lifestyle decisions based on environmental conditions. This project showcases the potential of IoT in addressing environmental and public health issues.",
+    title: "Certificate of Basic Web Programming Learning",
+    subtitle: "Completed through Dicoding Indonesia Platform",
+    fullDescription:"This certificate demonstrates a foundational understanding of web programming, including HTML, CSS, and JavaScript to build interactive web pages.",
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
     url: "https://github.com/rissss21",
@@ -123,9 +123,9 @@ export const listProyek = [
   {
     id: 3,
     image: Proyek3,
-    title: "IoT Heartbeat Monitoring System",
-    subtitle: "An IoT-based healthcare project developed to measure and monitor...",
-    fullDescription:"An IoT-based healthcare project developed to measure and monitor heart rate in real-time. The system connects sensors to a local web server, enabling users and healthcare providers to track data directly from a web interface. This project highlights the integration of hardware and software to create efficient medical solutions that can be applied in local clinics or personal health monitoring.",
+    title: "Certificate of Graphic Design and Product Finishing Internship",
+    subtitle: "Completed at New Radja Printing",
+    fullDescription:"This certificate acknowledges the successful completion of an internship program focused on graphic design and product finishing. The program provided hands-on experience in visual communication, digital design tools, and practical finishing techniques used in the printing industry.",
     borderColor: "#3B82F6",
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
     url: "https://github.com/rissss21",
@@ -134,9 +134,9 @@ export const listProyek = [
   {
     id: 4,
     image: Proyek4,
-    title: "Personal Web Portfolio",
-    subtitle: "An interactive web portfolio showcasing my professional journey...",
-    fullDescription:"An interactive web portfolio showcasing my professional journey, skills, and projects. Designed with a clean yet modern aesthetic, the portfolio highlights my technical expertise in web development, software engineering, and IoT. The site also serves as a central hub for potential employers and collaborators to explore my works, reflecting both my creativity and technical precision.",
+    title: "Certificate of Competency in Graphic Design",
+    subtitle: "Issued by LSP and National Professional Certification Board (BNSP) Indonesia",
+    fullDescription:"This certificate verifies professional competency in the field of graphic design, based on the national work competency standards (SKKNI). Certified by the Professional Certification Institute (LSP) under the National Professional Certification Board (BNSP), this recognition confirms the ability to create effective visual communication using industry-standard design principles, tools, and practices.",
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
     url: "https://github.com/rissss21",
@@ -160,7 +160,7 @@ export const showcases = [
       { src: "./assets/porto/SocialMedia/7.png", alt: "Social Media 7" },
       { src: "./assets/porto/SocialMedia/8.png", alt: "Social Media 8" },
       { src: "./assets/porto/SocialMedia/9.jpg", alt: "Social Media 9" },
-      { src: "./assets/porto/SocialMedia/510.png", alt: "Social Media 10" },
+      { src: "./assets/porto/SocialMedia/10.png", alt: "Social Media 10" },
     ],
   },
   {
@@ -223,5 +223,34 @@ export const showcases = [
       { src: "./assets/porto/Apparel/1.jpg", alt: "Apparel 1" },
       { src: "./assets/porto/Apparel/2.jpg", alt: "Apparel 2" },
     ],
+  },
+];
+// =======================
+// SPOTLIGHT DATA
+// =======================
+
+import StarIcon from "/assets/star.png";
+
+export const spotlightData = [
+  {
+    id: 1,
+    title: "Graphic Design Intern & Product Finishing",
+    desc: "May - December 2024 (New Radja Printing)",
+    color: "rgba(0, 229, 255, 0.2)",
+    img: StarIcon,
+  },
+  {
+    id: 2,
+    title: "Freelance Graphic Designer",
+    desc: "April 2023 - May 2025 (Upwork & Fiverr)",
+    color: "rgba(0, 255, 170, 0.2)",
+    img: StarIcon,
+  },
+  {
+    id: 3,
+    title: "Freelance Graphic Designer & Video Editor",
+    desc: "June 2025 - August 2025 (Sigma Education)",
+    color: "rgba(255, 200, 0, 0.2)",
+    img: StarIcon,
   },
 ];
