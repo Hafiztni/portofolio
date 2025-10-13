@@ -174,6 +174,7 @@ export const showcases = [
       { src: "./assets/porto/Poster/3.jpg", alt: "Poster 3" },
       { src: "./assets/porto/Poster/4.png", alt: "Poster 4" },
       { src: "./assets/porto/Poster/5.jpg", alt: "Poster 5" },
+      { src: "./assets/porto/Poster/6.png", alt: "Poster 6" },
     ],
   },
   {

@@ -45,11 +45,11 @@ function App() {
   // -------------------------
 
     const imageLogos = [
-    { src: "./assets/contact/wa.png", alt: "WhatsApp", href: "https://wa.me/123" },
-    { src: "./assets/contact/ig.png", alt: "Instagram", href: "https://instagram.com/" },
-    { src: "./assets/contact/fb.png", alt: "Facebook", href: "https://facebook.com/" },
-    { src: "./assets/contact/be.png", alt: "Behance", href: "https://behance.net/" },
-    { src: "./assets/contact/link.png", alt: "LinkedIn", href: "https://linkedin.com/" },
+    { src: "./assets/contact/wa.png", alt: "WhatsApp", href: "https://wa.me/6281383203964" },
+    { src: "./assets/contact/ig.png", alt: "Instagram", href: "https://instagram.com/fitztaavic" },
+    { src: "./assets/contact/fb.png", alt: "Facebook", href: "https://www.facebook.com/hafizt.ikhsan/" },
+    { src: "./assets/contact/be.png", alt: "Behance", href: "https://behance.net/hafiztnurikhsan" },
+    { src: "./assets/contact/link.png", alt: "LinkedIn", href: "https://linkedin.com/hafiztnurikhsan" },
   ];
 
   // -------------------------
@@ -141,7 +141,7 @@ useEffect(() => {
                 <ShinyText text="Download CV" disabled={false} speed={3} className="custom-class" />
               </a>
 
-              <a href="#project" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
+              <a href="#portfolio" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
                 <ShinyText text="Explore My Projects" disabled={false} speed={3} className="custom-class" />
               </a>
             </div>
@@ -215,16 +215,26 @@ useEffect(() => {
 
         <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
           <div>
-            <h1 className="text-3xl md:text-4xl mb-1">
-              40<span className="text-violet-500">+</span>
-            </h1>
-            <p>Project Finished</p>
+<h1 className="text-3xl md:text-4xl mb-1">
+  <CountUp 
+    from={0} 
+    to={50} 
+    duration={2} 
+    separator="," 
+    className="inline-block"
+  />
+  <span className="text-violet-500">+</span>
+</h1>
+<p>Project Finished</p>
+
           </div>
           <div>
-            <h1 className="text-3xl md:text-4xl mb-1">
-              2<span className="text-violet-500">+</span>
-            </h1>
-            <p>Years of Experience</p>
+<h1 className="text-3xl md:text-4xl mb-1">
+  <CountUp from={0} to={2} duration={2} className="inline-block" />
+  <span className="text-violet-500">+</span>
+</h1>
+<p>Years of Experience</p>
+
           </div>
         </div>
       </div>
@@ -310,7 +320,7 @@ useEffect(() => {
         </div>
         {/* Proyek */}
 
-<div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="mt-24">
+<div id="portfolio" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="mt-24">
   <PortfolioGallery />
 </div>
 
