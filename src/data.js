@@ -158,7 +158,7 @@ export const showcases = [
       { src: "./assets/porto/SocialMedia/5.png", alt: "Social Media 5" },
       { src: "./assets/porto/SocialMedia/6.png", alt: "Social Media 6" },
       { src: "./assets/porto/SocialMedia/7.png", alt: "Social Media 7" },
-      { src: "./assets/porto/SocialMedia/8.png", alt: "Social Media 8" },
+      { src: "./assets/porto/SocialMedia/8.jpeg", alt: "Social Media 8" },
       { src: "./assets/porto/SocialMedia/9.jpg", alt: "Social Media 9" },
       { src: "./assets/porto/SocialMedia/10.png", alt: "Social Media 10" },
     ],
