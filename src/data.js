@@ -236,7 +236,7 @@ export const spotlightData = [
   {
     id: 1,
     title: "Graphic Design Intern & Product Finishing",
-    desc: "May - December 2024 (New Radja Printing)",
+    desc: "June - December 2024 (New Radja Printing)",
     color: "rgba(0, 229, 255, 0.2)",
     img: StarIcon,
   },
