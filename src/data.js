@@ -93,8 +93,9 @@ export const listTools = [
 
 import Proyek1 from "/assets/sertif/BasicAi.png";
 import Proyek2 from "/assets/sertif/BasicHtml.jpg";
-import Proyek3 from "/assets/sertif/Magang.jpeg";
-import Proyek4 from "/assets/sertif/GraphicDesign.jpeg";
+import Proyek3 from "/assets/sertif/BasicJavaSript.png";
+import Proyek4 from "/assets/sertif/Magang.jpeg";
+import Proyek5 from "/assets/sertif/GraphicDesign.jpeg";
 
 
 export const listProyek = [
@@ -120,9 +121,21 @@ export const listProyek = [
     url: "https://github.com/rissss21",
     dad: "200",
   },
+{
+  id: 3,
+  image: Proyek3,
+  title: "Certificate of Basic JavaScript Learning",
+  subtitle: "Completed through Dicoding Indonesia Platform",
+  fullDescription: "This certificate demonstrates a foundational understanding of JavaScript, including variables, loops, functions, and basic logic to build dynamic web applications.",
+  borderColor: "#10B981",
+  gradient: "linear-gradient(180deg, #10B981, #000)",
+  url: "https://github.com/rissss21",
+  dad: "200"
+}
+,
   {
-    id: 3,
-    image: Proyek3,
+    id: 4,
+    image: Proyek4,
     title: "Certificate of Graphic Design and Product Finishing Internship",
     subtitle: "Completed at New Radja Printing",
     fullDescription:"This certificate acknowledges the successful completion of an internship program focused on graphic design and product finishing. The program provided hands-on experience in visual communication, digital design tools, and practical finishing techniques used in the printing industry.",
@@ -133,7 +146,7 @@ export const listProyek = [
   },
   {
     id: 4,
-    image: Proyek4,
+    image: Proyek5,
     title: "Certificate of Competency in Graphic Design",
     subtitle: "Issued by LSP and National Professional Certification Board (BNSP) Indonesia",
     fullDescription:"This certificate verifies professional competency in the field of graphic design, based on the national work competency standards (SKKNI). Certified by the Professional Certification Institute (LSP) under the National Professional Certification Board (BNSP), this recognition confirms the ability to create effective visual communication using industry-standard design principles, tools, and practices.",
