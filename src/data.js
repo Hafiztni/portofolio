@@ -91,20 +91,20 @@ export const listTools = [
   },
 ];
 
-import Proyek1 from "/assets/sertif/BasicAi.png";
+import Proyek1 from "/assets/sertif/FrontEnd.png";
 import Proyek2 from "/assets/sertif/BasicHtml.jpg";
 import Proyek3 from "/assets/sertif/BasicJavaSript.png";
 import Proyek4 from "/assets/sertif/Magang.jpeg";
 import Proyek5 from "/assets/sertif/GraphicDesign.jpeg";
-
+import Proyek6 from "/assets/sertif/BasicAi.png";
 
 export const listProyek = [
   {
     id: 1,
     image: Proyek1,
-    title: "Certificate of Basic AI Learning",
+    title: "Certificate of Front-End Web Development for Beginners",
     subtitle: "Completed through Dicoding Indonesia Platform",
-    fullDescription:"This certificate signifies a foundational understanding of AI concepts and applications, including machine learning, data processing, and AI algorithms.",
+    fullDescription:"This certificate demonstrates a foundational understanding of front-end web development, including HTML, CSS, and basic JavaScript to build responsive and interactive web pages.",
     borderColor: "#3B82F6",
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
     url: "https://github.com/rissss21",
@@ -133,8 +133,20 @@ export const listProyek = [
   dad: "200"
 }
 ,
+{
+  id: 4,
+  image: Proyek6,
+  title: "Certificate of Basic AI Learning",
+  subtitle: "Completed through Dicoding Indonesia Platform",
+  fullDescription: "This certificate signifies a foundational understanding of AI concepts and applications, including machine learning, data processing, and AI algorithms.",
+  borderColor: "#10B981",
+  gradient: "linear-gradient(180deg, #10B981, #000)",
+  url: "https://github.com/rissss21",
+  dad: "200"
+}
+,
   {
-    id: 4,
+    id: 5,
     image: Proyek4,
     title: "Certificate of Graphic Design and Product Finishing Internship",
     subtitle: "Completed at New Radja Printing",
@@ -145,7 +157,7 @@ export const listProyek = [
     dad: "300",
   },
   {
-    id: 4,
+    id: 6,
     image: Proyek5,
     title: "Certificate of Competency in Graphic Design",
     subtitle: "Issued by LSP and National Professional Certification Board (BNSP) Indonesia",
