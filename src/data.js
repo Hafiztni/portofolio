@@ -213,6 +213,7 @@ export const showcases = [
       { src: "./assets/porto/Packaging/3.jpg", alt: "Packaging 3" },
       { src: "./assets/porto/Packaging/4.jpg", alt: "Packaging 4" },
       { src: "./assets/porto/Packaging/5.jpg", alt: "Packaging 5" },
+      { src: "./assets/porto/Packaging/6.jpg", alt: "Packaging 6" },
     ],
   },
   {
