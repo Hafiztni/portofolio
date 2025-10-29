@@ -251,6 +251,15 @@ export const showcases = [
       { src: "./assets/porto/Apparel/2.jpg", alt: "Apparel 2" },
     ],
   },
+  {
+    id: 7,
+    title: "UI/UX",
+    width: 220,
+    height: 310,
+    images: [
+      { src: "./assets/porto/Ui/1.png", alt: "UI/UX 1" },
+    ],
+  },
 ];
 // =======================
 // SPOTLIGHT DATA
