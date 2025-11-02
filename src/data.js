@@ -186,6 +186,7 @@ export const showcases = [
       { src: "./assets/porto/SocialMedia/8.jpeg", alt: "Social Media 8" },
       { src: "./assets/porto/SocialMedia/9.jpg", alt: "Social Media 9" },
       { src: "./assets/porto/SocialMedia/10.png", alt: "Social Media 10" },
+      { src: "./assets/porto/SocialMedia/11.png", alt: "Social Media 11" },
     ],
   },
   {
@@ -199,7 +200,6 @@ export const showcases = [
       { src: "./assets/porto/Poster/3.jpg", alt: "Poster 3" },
       { src: "./assets/porto/Poster/4.png", alt: "Poster 4" },
       { src: "./assets/porto/Poster/5.jpg", alt: "Poster 5" },
-      { src: "./assets/porto/Poster/6.png", alt: "Poster 6" },
     ],
   },
   {
@@ -258,6 +258,15 @@ export const showcases = [
     height: 310,
     images: [
       { src: "./assets/porto/Ui/1.png", alt: "UI/UX 1" },
+    ],
+  },
+  {
+    id: 8,
+    title: "Flyer",
+    width: 220,
+    height: 310,
+    images: [
+      { src: "./assets/porto/Poster/6.png", alt: "Flyer 1" },
     ],
   },
 ];
