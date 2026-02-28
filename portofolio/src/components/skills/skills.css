@@ -1,0 +1,86 @@
+.whyWrap {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.whyTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: white;
+}
+
+/* Reuse style dari tilesWrap */
+.tilesWrap {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tilesWrap li {
+  position: relative;
+  background: linear-gradient(145deg, #2a0038, #3d0066);
+  border: 1px solid #a855f7;
+  border-radius: 20px;
+  color: white;
+  flex: 1 1 230px;
+  max-width: 260px;
+  min-width: 220px;
+  padding: 60px 25px 40px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.tilesWrap li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(168, 85, 247, 0.7);
+  background: linear-gradient(145deg, #4c0099, #2a0038);
+}
+
+.tilesWrap li h2 {
+  font-size: 114px;
+  margin: 0;
+  position: absolute;
+  opacity: 0.15;
+  top: 50px;
+  right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tilesWrap li h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.tilesWrap li:hover h3 {
+  transform: translateY(-5px);
+}
+
+.tilesWrap li p {
+  font-size: 15px;
+  line-height: 22px;
+  color: #c5c5c5;
+  margin-top: 5px;
+  flex-grow: 1;
+  transition: transform 0.3s ease;
+}
+
+.tilesWrap li:hover p {
+  transform: translateY(-5px);
+}
+
+.tilesWrap li:hover h2 {
+  top: 0px;
+  opacity: 0.4;
+}
