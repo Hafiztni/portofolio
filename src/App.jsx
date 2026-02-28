@@ -44,11 +44,11 @@ function App() {
   // -------------------------
 
     const imageLogos = [
-    { src: "./assets/contact/wa.png", alt: "WhatsApp", href: "https://wa.me/6281383203964" },
-    { src: "./assets/contact/ig.png", alt: "Instagram", href: "https://instagram.com/fitztaavic" },
-    { src: "./assets/contact/fb.png", alt: "Facebook", href: "https://www.facebook.com/hafizt.ikhsan/" },
-    { src: "./assets/contact/be.png", alt: "Behance", href: "https://behance.net/hafiztnurikhsan" },
-    { src: "./assets/contact/link.png", alt: "LinkedIn", href: "https://linkedin.com/hafiztnurikhsan" },
+    { src: "/portofolio/assets/contact/wa.png", alt: "WhatsApp", href: "https://wa.me/6281383203964" },
+    { src: "/portofolio/assets/contact/ig.png", alt: "Instagram", href: "https://instagram.com/fitztaavic" },
+    { src: "/portofolio/assets/contact/fb.png", alt: "Facebook", href: "https://www.facebook.com/hafizt.ikhsan/" },
+    { src: "/portofolio/assets/contact/be.png", alt: "Behance", href: "https://behance.net/hafiztnurikhsan" },
+    { src: "/portofolio/assets/contact/link.png", alt: "LinkedIn", href: "https://linkedin.com/hafiztnurikhsan" },
   ];
 
   // -------------------------

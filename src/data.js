@@ -174,17 +174,17 @@ export const showcases = [
     width: 210,
     height: 350,
     images: [
-      { src: "./assets/porto/SocialMedia/1.jpg", alt: "Social Media 1" },
-      { src: "./assets/porto/SocialMedia/2.jpg", alt: "Social Media 2" },
-      { src: "./assets/porto/SocialMedia/3.jpg", alt: "Social Media 3" },
-      { src: "./assets/porto/SocialMedia/4.png", alt: "Social Media 4" },
-      { src: "./assets/porto/SocialMedia/5.png", alt: "Social Media 5" },
-      { src: "./assets/porto/SocialMedia/6.png", alt: "Social Media 6" },
-      { src: "./assets/porto/SocialMedia/7.png", alt: "Social Media 7" },
-      { src: "./assets/porto/SocialMedia/8.jpeg", alt: "Social Media 8" },
-      { src: "./assets/porto/SocialMedia/9.jpg", alt: "Social Media 9" },
-      { src: "./assets/porto/SocialMedia/10.png", alt: "Social Media 10" },
-      { src: "./assets/porto/SocialMedia/11.png", alt: "Social Media 11" },
+      { src: "/portofolio/assets/porto/SocialMedia/1.jpg", alt: "Social Media 1" },
+      { src: "/portofolio/assets/porto/SocialMedia/2.jpg", alt: "Social Media 2" },
+      { src: "/portofolio/assets/porto/SocialMedia/3.jpg", alt: "Social Media 3" },
+      { src: "/portofolio/assets/porto/SocialMedia/4.png", alt: "Social Media 4" },
+      { src: "/portofolio/assets/porto/SocialMedia/5.png", alt: "Social Media 5" },
+      { src: "/portofolio/assets/porto/SocialMedia/6.png", alt: "Social Media 6" },
+      { src: "/portofolio/assets/porto/SocialMedia/7.png", alt: "Social Media 7" },
+      { src: "/portofolio/assets/porto/SocialMedia/8.jpeg", alt: "Social Media 8" },
+      { src: "/portofolio/assets/porto/SocialMedia/9.jpg", alt: "Social Media 9" },
+      { src: "/portofolio/assets/porto/SocialMedia/10.png", alt: "Social Media 10" },
+      { src: "/portofolio/assets/porto/SocialMedia/11.png", alt: "Social Media 11" },
     ],
   },
   {
@@ -193,7 +193,7 @@ export const showcases = [
     width: 220,
     height: 310,
     images: [
-      { src: "./assets/porto/Poster/6.png", alt: "Flyer 1" },
+      { src: "/portofolio/assets/porto/Poster/6.png", alt: "Flyer 1" },
     ],
   },
   {
@@ -202,11 +202,11 @@ export const showcases = [
     width: 220,
     height: 310,
     images: [
-      { src: "./assets/porto/Poster/1.jpg", alt: "Poster 1" },
-      { src: "./assets/porto/Poster/2.jpg", alt: "Poster 2" },
-      { src: "./assets/porto/Poster/3.jpg", alt: "Poster 3" },
-      { src: "./assets/porto/Poster/4.png", alt: "Poster 4" },
-      { src: "./assets/porto/Poster/5.jpg", alt: "Poster 5" },
+      { src: "/portofolio/assets/porto/Poster/1.jpg", alt: "Poster 1" },
+      { src: "/portofolio/assets/porto/Poster/2.jpg", alt: "Poster 2" },
+      { src: "/portofolio/assets/porto/Poster/3.jpg", alt: "Poster 3" },
+      { src: "/portofolio/assets/porto/Poster/4.png", alt: "Poster 4" },
+      { src: "/portofolio/assets/porto/Poster/5.jpg", alt: "Poster 5" },
     ],
   },
   {
@@ -215,12 +215,12 @@ export const showcases = [
     width: 320,
     height: 210,
     images: [
-      { src: "./assets/porto/Packaging/1.jpg", alt: "Packaging 1" },
-      { src: "./assets/porto/Packaging/2.jpg", alt: "Packaging 2" },
-      { src: "./assets/porto/Packaging/3.jpg", alt: "Packaging 3" },
-      { src: "./assets/porto/Packaging/4.jpg", alt: "Packaging 4" },
-      { src: "./assets/porto/Packaging/5.jpg", alt: "Packaging 5" },
-      { src: "./assets/porto/Packaging/6.jpg", alt: "Packaging 6" },
+      { src: "/portofolio/assets/porto/Packaging/1.jpg", alt: "Packaging 1" },
+      { src: "/portofolio/assets/porto/Packaging/2.jpg", alt: "Packaging 2" },
+      { src: "/portofolio/assets/porto/Packaging/3.jpg", alt: "Packaging 3" },
+      { src: "/portofolio/assets/porto/Packaging/4.jpg", alt: "Packaging 4" },
+      { src: "/portofolio/assets/porto/Packaging/5.jpg", alt: "Packaging 5" },
+      { src: "/portofolio/assets/porto/Packaging/6.jpg", alt: "Packaging 6" },
     ],
   },
   {
@@ -229,11 +229,11 @@ export const showcases = [
     width: 320,
     height: 210,
     images: [
-      { src: "./assets/porto/Chiby/1.jpg", alt: "Chibi 1" },
-      { src: "./assets/porto/Chiby/2.jpg", alt: "Chibi 2" },
-      { src: "./assets/porto/Chiby/3.jpg", alt: "Chibi 3" },
-      { src: "./assets/porto/Chiby/4.jpg", alt: "Chibi 4" },
-      { src: "./assets/porto/Chiby/5.jpg", alt: "Chibi 5" },
+      { src: "/portofolio/assets/porto/Chiby/1.jpg", alt: "Chibi 1" },
+      { src: "/portofolio/assets/porto/Chiby/2.jpg", alt: "Chibi 2" },
+      { src: "/portofolio/assets/porto/Chiby/3.jpg", alt: "Chibi 3" },
+      { src: "/portofolio/assets/porto/Chiby/4.jpg", alt: "Chibi 4" },
+      { src: "/portofolio/assets/porto/Chiby/5.jpg", alt: "Chibi 5" },
     ],
   },
   {
@@ -242,10 +242,10 @@ export const showcases = [
     width: 320,
     height: 210,
     images: [
-      { src: "./assets/porto/Livery/1.png", alt: "Livery 1" },
-      { src: "./assets/porto/Livery/2.png", alt: "Livery 2" },
-      { src: "./assets/porto/Livery/3.png", alt: "Livery 3" },
-      { src: "./assets/porto/Livery/4.png", alt: "Livery 4" },
+      { src: "/portofolio/assets/porto/Livery/1.png", alt: "Livery 1" },
+      { src: "/portofolio/assets/porto/Livery/2.png", alt: "Livery 2" },
+      { src: "/portofolio/assets/porto/Livery/3.png", alt: "Livery 3" },
+      { src: "/portofolio/assets/porto/Livery/4.png", alt: "Livery 4" },
     ],
   },
   {
@@ -254,8 +254,8 @@ export const showcases = [
     width: 220,
     height: 310,
     images: [
-      { src: "./assets/porto/Apparel/1.jpg", alt: "Apparel 1" },
-      { src: "./assets/porto/Apparel/2.jpg", alt: "Apparel 2" },
+      { src: "/portofolio/assets/porto/Apparel/1.jpg", alt: "Apparel 1" },
+      { src: "/portofolio/assets/porto/Apparel/2.jpg", alt: "Apparel 2" },
     ],
   },
   {
@@ -264,7 +264,7 @@ export const showcases = [
     width: 220,
     height: 310,
     images: [
-      { src: "./assets/porto/Ui/1.png", alt: "UI/UX 1" },
+      { src: "/portofolio/assets/porto/Ui/1.png", alt: "UI/UX 1" },
     ],
   },
   {
@@ -273,7 +273,7 @@ export const showcases = [
     width: 220,
     height: 310,
     images: [
-      { src: "./assets/porto/sigma_education.mp4", alt: "Sigma Education Video" },
+      { src: "/portofolio/assets/porto/sigma_education.mp4", alt: "Sigma Education Video" },
     ],
   },
 ];
