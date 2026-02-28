@@ -91,9 +91,9 @@ export const listTools = [
   },
 ];
 
-import Proyek1 from "/assets/sertif/FrontEnd.png";
-import Proyek2 from "/assets/sertif/BasicHtml.jpg";
-import Proyek3 from "/assets/sertif/BasicJavaSript.png";
+import Proyek1 from "/assets/sertif/BasicHtml.jpg";
+import Proyek2 from "/assets/sertif/FundamentalFrontEnd.png";
+import Proyek3 from "/assets/sertif/CloudAws.png";
 import Proyek4 from "/assets/sertif/Magang.jpeg";
 import Proyek5 from "/assets/sertif/GraphicDesign.jpeg";
 import Proyek6 from "/assets/sertif/BasicAi.png";
@@ -102,9 +102,9 @@ export const listProyek = [
   {
     id: 1,
     image: Proyek1,
-    title: "Certificate of Front-End Web Development for Beginners",
+    title: "Certificate of Basic Web Programming",
     subtitle: "Completed through Dicoding Indonesia Platform",
-    fullDescription:"This certificate demonstrates a foundational understanding of front-end web development, including HTML, CSS, and basic JavaScript to build responsive and interactive web pages.",
+    fullDescription:"This certificate demonstrates foundational knowledge of web programming, including HTML, CSS, and basic JavaScript to build responsive and interactive web pages.",
     borderColor: "#3B82F6",
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
     url: "https://github.com/rissss21",
@@ -113,38 +113,36 @@ export const listProyek = [
   {
     id: 2,
     image: Proyek2,
-    title: "Certificate of Basic Web Programming Learning",
+    title: "Certificate of Front-End Development Fundamentals",
     subtitle: "Completed through Dicoding Indonesia Platform",
-    fullDescription:"This certificate demonstrates a foundational understanding of web programming, including HTML, CSS, and JavaScript to build interactive web pages.",
+    fullDescription:"This certificate demonstrates foundational knowledge of front-end development, including HTML, CSS, and JavaScript to build responsive and interactive web interfaces.",
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
     url: "https://github.com/rissss21",
     dad: "200",
   },
-{
-  id: 3,
-  image: Proyek3,
-  title: "Certificate of Basic JavaScript Learning",
-  subtitle: "Completed through Dicoding Indonesia Platform",
-  fullDescription: "This certificate demonstrates a foundational understanding of JavaScript, including variables, loops, functions, and basic logic to build dynamic web applications.",
-  borderColor: "#10B981",
-  gradient: "linear-gradient(180deg, #10B981, #000)",
-  url: "https://github.com/rissss21",
-  dad: "200"
-}
-,
-{
-  id: 4,
-  image: Proyek6,
-  title: "Certificate of Basic AI Learning",
-  subtitle: "Completed through Dicoding Indonesia Platform",
-  fullDescription: "This certificate signifies a foundational understanding of AI concepts and applications, including machine learning, data processing, and AI algorithms.",
-  borderColor: "#10B981",
-  gradient: "linear-gradient(180deg, #10B981, #000)",
-  url: "https://github.com/rissss21",
-  dad: "200"
-}
-,
+  {
+    id: 3,
+    image: Proyek3,
+    title: "Certificate of Basic AWS Cloud Learning",
+    subtitle: "Completed through Dicoding Indonesia Platform",
+    fullDescription: "This certificate demonstrates foundational knowledge of AWS Cloud services, including core infrastructure, deployment, and basic cloud architecture principles.",
+    borderColor: "#10B981",
+    gradient: "linear-gradient(180deg, #10B981, #000)",
+    url: "https://github.com/rissss21",
+    dad: "200",
+  },
+  {
+    id: 4,
+    image: Proyek6,
+    title: "Certificate of Basic AI Learning",
+    subtitle: "Completed through Dicoding Indonesia Platform",
+    fullDescription: "This certificate signifies a foundational understanding of AI concepts and applications, including machine learning, data processing, and AI algorithms.",
+    borderColor: "#10B981",
+    gradient: "linear-gradient(180deg, #10B981, #000)",
+    url: "https://github.com/rissss21",
+    dad: "200",
+  },
   {
     id: 5,
     image: Proyek4,
@@ -191,6 +189,15 @@ export const showcases = [
   },
   {
     id: 2,
+    title: "Flyer",
+    width: 220,
+    height: 310,
+    images: [
+      { src: "./assets/porto/Poster/6.png", alt: "Flyer 1" },
+    ],
+  },
+  {
+    id: 3,
     title: "Poster",
     width: 220,
     height: 310,
@@ -203,7 +210,7 @@ export const showcases = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Packaging",
     width: 320,
     height: 210,
@@ -217,7 +224,7 @@ export const showcases = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Chibi Characters",
     width: 320,
     height: 210,
@@ -230,7 +237,7 @@ export const showcases = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Livery And Decal",
     width: 320,
     height: 210,
@@ -242,7 +249,7 @@ export const showcases = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Apparel",
     width: 220,
     height: 310,
@@ -252,7 +259,7 @@ export const showcases = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "UI/UX",
     width: 220,
     height: 310,
@@ -261,12 +268,12 @@ export const showcases = [
     ],
   },
   {
-    id: 8,
-    title: "Flyer",
+    id: 9,
+    title: "Video Editing",
     width: 220,
     height: 310,
     images: [
-      { src: "./assets/porto/Poster/6.png", alt: "Flyer 1" },
+      { src: "./assets/porto/sigma_education.mp4", alt: "Sigma Education Video" },
     ],
   },
 ];
