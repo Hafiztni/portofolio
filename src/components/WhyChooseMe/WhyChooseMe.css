@@ -1,38 +1,80 @@
 .whyWrap {
   text-align: center;
-  margin-top: 120px;
+  margin-top: 50px;
+  padding: 0 12px;
+  /* Mobile: 50px, Tablet: 80px, Desktop: 120px */
+}
+
+@media (min-width: 640px) {
+  .whyWrap {
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .whyWrap {
+    margin-top: 120px;
+    padding: 0;
+  }
 }
 
 .whyTitle {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: white;
+}
+
+@media (min-width: 640px) {
+  .whyTitle {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .whyTitle {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
 }
 
 /* Reuse style dari tilesWrap */
 .tilesWrap {
-  padding: 0;
+  padding: 0 8px;
   margin: 0 auto;
   list-style: none;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .tilesWrap {
+    gap: 16px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tilesWrap {
+    gap: 20px;
+  }
 }
 
 .tilesWrap li {
   position: relative;
   background: linear-gradient(145deg, #2a0038, #3d0066);
   border: 1px solid #a855f7;
-  border-radius: 20px;
+  border-radius: 16px;
   color: white;
-  flex: 1 1 230px;
-  max-width: 260px;
-  min-width: 220px;
-  padding: 60px 25px 40px;
-  min-height: 320px;
+  flex: 1 1 160px;
+  max-width: 280px;
+  min-width: 140px;
+  padding: 30px 16px 25px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,27 +82,84 @@
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
+@media (min-width: 640px) {
+  .tilesWrap li {
+    flex: 1 1 200px;
+    max-width: 260px;
+    min-width: 200px;
+    padding: 40px 20px 30px;
+    min-height: 280px;
+    border-radius: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tilesWrap li {
+    flex: 1 1 230px;
+    max-width: 260px;
+    min-width: 220px;
+    padding: 60px 25px 40px;
+    min-height: 320px;
+    border-radius: 20px;
+  }
+}
+
 .tilesWrap li:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(168, 85, 247, 0.7);
   background: linear-gradient(145deg, #4c0099, #2a0038);
 }
 
+@media (min-width: 1024px) {
+  .tilesWrap li:hover {
+    transform: translateY(-10px);
+  }
+}
+
 .tilesWrap li h2 {
-  font-size: 114px;
+  font-size: 40px;
   margin: 0;
   position: absolute;
   opacity: 0.15;
-  top: 50px;
-  right: 10px;
+  top: 30px;
+  right: 5px;
   transition: all 0.3s ease-in-out;
 }
 
+@media (min-width: 640px) {
+  .tilesWrap li h2 {
+    font-size: 70px;
+    top: 40px;
+    right: 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tilesWrap li h2 {
+    font-size: 114px;
+    top: 50px;
+    right: 10px;
+  }
+}
+
 .tilesWrap li h3 {
-  font-size: 20px;
+  font-size: 14px;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   transition: transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .tilesWrap li h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tilesWrap li h3 {
+    font-size: 20px;
+  }
 }
 
 .tilesWrap li:hover h3 {
@@ -68,12 +167,26 @@
 }
 
 .tilesWrap li p {
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 12px;
+  line-height: 18px;
   color: #c5c5c5;
   margin-top: 5px;
   flex-grow: 1;
   transition: transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .tilesWrap li p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tilesWrap li p {
+    font-size: 15px;
+    line-height: 22px;
+  }
 }
 
 .tilesWrap li:hover p {

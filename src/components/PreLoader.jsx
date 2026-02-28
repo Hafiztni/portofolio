@@ -22,9 +22,23 @@ const PreLoader = ({ onFinish }) => {
       }
     };
 
+    // FALLBACK: Jika animasi tidak trigger, hide PreLoader setelah 3 detik
+    const fallbackTimer = setTimeout(() => {
+      if (show) {
+        setFadeOut(true);
+        setTimeout(() => {
+          setShow(false);
+          onFinish?.();
+        }, 600);
+      }
+    }, 3000);
+
     loader?.addEventListener("animationiteration", handleIteration);
-    return () => loader?.removeEventListener("animationiteration", handleIteration);
-  }, [onFinish]);
+    return () => {
+      loader?.removeEventListener("animationiteration", handleIteration);
+      clearTimeout(fallbackTimer);
+    };
+  }, [onFinish, show]);
 
   // kalau sudah selesai loading → hapus komponen dari DOM
   if (!show) return null;

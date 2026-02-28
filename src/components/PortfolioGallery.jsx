@@ -101,17 +101,35 @@ export default function PortfolioGallery({ className = "" }) {
             style={{ height: imageHeight, width: "100%" }}
             onClick={() => openLightbox(idx)}
             data-aos="fade-up"
-            data-aos-delay={idx * 150} // ⬅ delay per item
+            data-aos-delay={idx * 150}
             data-aos-duration="800"
           >
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
-              width={imageWidth}
-              height={imageHeight}
-            />
+            {img.src.endsWith('.mp4') ? (
+              <video
+                src={img.src}
+                className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105 bg-black"
+                muted
+                loop
+              />
+            ) : (
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
+                width={imageWidth}
+                height={imageHeight}
+              />
+            )}
             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+            {img.src.endsWith('.mp4') && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-white/20 rounded-full p-3 group-hover:bg-white/40 transition-colors">
+                  <svg className="w-6 h-6 text-white fill-current" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -158,18 +176,29 @@ export default function PortfolioGallery({ className = "" }) {
             ›
           </button>
 
-          {/* 🖼️ Gambar utama */}
+          {/* 🖼️ Gambar/Video utama */}
           <div
             className="flex items-center justify-center w-full h-full p-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={images[currentIndex].src}
-              alt={images[currentIndex].alt}
-              className="rounded-2xl shadow-2xl object-contain transition-transform duration-500 
+            {images[currentIndex].src.endsWith('.mp4') ? (
+              <video
+                src={images[currentIndex].src}
+                controls
+                autoPlay
+                className="rounded-2xl shadow-2xl object-contain transition-transform duration-500 
+              scale-100 hover:scale-105 
+              max-h-[75vh] max-w-[85vw] sm:max-h-[80vh] sm:max-w-[70vw] bg-black"
+              />
+            ) : (
+              <img
+                src={images[currentIndex].src}
+                alt={images[currentIndex].alt}
+                className="rounded-2xl shadow-2xl object-contain transition-transform duration-500 
               scale-100 hover:scale-105 
               max-h-[75vh] max-w-[85vw] sm:max-h-[80vh] sm:max-w-[70vw]"
-            />
+              />
+            )}
           </div>
 
           {/* Info bawah */}
